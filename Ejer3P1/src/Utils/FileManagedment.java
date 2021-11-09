@@ -1,14 +1,25 @@
+package Utils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.JOptionPane;
+
 public class FileManagedment {
 
+	
+	/*
+	 * Lee el fichero que se le pasa en el primer parámetro, cuenta el número de vocales que hay en él
+	 * y escribe este conteo en el fichero que se pasa por el último parámetro. Devuelve true si la 
+	 * escrituro ha sido exitosa.
+	 */
 	public static boolean counter(String fileName, char vowel, char vowelCapital, String fileResultName) {
 		boolean b = false;
 		String linea = null;
 		@SuppressWarnings("unused")
 		String linea2 = null;
+		String delimitador=";";
 		int contador = 0;
 		BufferedReader br = FileProperties.getBufferedReader(fileName);
 		BufferedReader br2 = FileProperties.getBufferedReader(fileResultName);
@@ -22,10 +33,8 @@ public class FileManagedment {
 					}
 				}
 			}
-			pw.write(contador);
-			if ((linea2 = br2.readLine()) != null) {
-				b = true;
-			}
+			pw.write(contador+delimitador);
+			b = true;
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -43,10 +52,17 @@ public class FileManagedment {
 
 	}
 
+	/*
+	 * Llama al método counter
+	 */
 	public static void main(String[] args) {
 		char vowel = args[1].charAt(0);
 		char vowelCapital = args[1].toUpperCase().charAt(0);
-		counter(args[0], vowel, vowelCapital, args[2]);
+		if(counter(args[0], vowel, vowelCapital, args[2])) {
+			JOptionPane.showMessageDialog(null, "Se ha escrito en el archivo");
+		} else {
+			JOptionPane.showMessageDialog(null, "Error al contar las vocales");
+		}
 	}
 
 }

@@ -1,3 +1,5 @@
+package Utils;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,7 +22,7 @@ public class FileProperties {
 	public static PrintWriter getPrintWriter(String fileName) {
 		PrintWriter pw = null;
 		try {
-			pw = new PrintWriter(new FileWriter(fileName));
+			pw = new PrintWriter(new FileWriter(fileName), true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
