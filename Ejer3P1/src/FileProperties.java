@@ -13,7 +13,7 @@ public class FileProperties {
 			br = new BufferedReader(new FileReader(fileName));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
+		} 
 		return br;
 	}
 
