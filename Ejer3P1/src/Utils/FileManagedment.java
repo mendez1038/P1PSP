@@ -22,7 +22,6 @@ public class FileManagedment {
 		String delimitador=";";
 		int contador = 0;
 		BufferedReader br = FileProperties.getBufferedReader(fileName);
-		BufferedReader br2 = FileProperties.getBufferedReader(fileResultName);
 		PrintWriter pw = FileProperties.getPrintWriter(fileResultName);
 
 		try {
