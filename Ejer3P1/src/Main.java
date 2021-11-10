@@ -25,13 +25,16 @@ public class Main {
 		} else {
 			try {
 				
-				
-				//Creamos el archivo donde escribiremos los resultados de los contadores
+				/*
+				 * 	Creamos el archivo donde escribiremos los resultados de los contadores
+				 */
 				File archivoEscribir = new File("\\Ficheros\\resultado.txt");
 				archivoEscribir.createNewFile();
 				rutaArchivoEscribir = archivoEscribir.getAbsolutePath();
 				
-				//Creamos los subprocesos que contarán cada vocal
+				/*
+				 * Creamos los subprocesos que contarán cada vocal
+				 */
 				argumentos = args[0]+" "+vocales[0]+" "+rutaArchivoEscribir;
 				//Concatenar a args[1] el nombre de la clase que se tiene que ejecutar
 				//Como?????
@@ -46,7 +49,9 @@ public class Main {
 				Process pbU = new ProcessBuilder(args[1], argumentos).start();
 				
 				
-				//Leer el archivo de escritura y mostrar resultado por pantalla
+				/*
+				 * Leer el archivo de escritura y mostrar resultado por pantalla
+				 */
 				br = Utils.FileProperties.getBufferedReader(rutaArchivoEscribir);
 				while ((linea = br.readLine())!=null) {
 					valores = linea.split(";");

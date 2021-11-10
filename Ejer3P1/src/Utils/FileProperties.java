@@ -9,6 +9,9 @@ import java.io.PrintWriter;
 
 public class FileProperties {
 
+	/*
+	 * Crea un BufferedReader y lo devuelve
+	 */
 	public static BufferedReader getBufferedReader(String fileName) {
 		BufferedReader br = null;
 		try {
@@ -19,6 +22,9 @@ public class FileProperties {
 		return br;
 	}
 
+	/*
+	 * Crea un PrintWriter y lo devuelve
+	 */
 	public static PrintWriter getPrintWriter(String fileName) {
 		PrintWriter pw = null;
 		try {
