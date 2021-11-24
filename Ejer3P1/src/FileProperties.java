@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,9 +11,7 @@ public class FileProperties {
 	/*
 	 * Crea un BufferedReader y lo devuelve
 	 */
-	
 	public static BufferedReader getBufferedReader(String fileName) {
-		System.out.println(fileName);
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(new File(fileName)));

@@ -1,8 +1,3 @@
-
-
-
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,9 +15,6 @@ public class FileManagedment {
 	public static boolean counter(String fileName, char vowel, char vowelCapital, String fileResultName) {
 		boolean b = false;
 		String linea = null;
-		@SuppressWarnings("unused")
-		String linea2 = null;
-		String delimitador=";";
 		int contador = 0;
 		BufferedReader br = FileProperties.getBufferedReader(fileName);
 		PrintWriter pw = FileProperties.getPrintWriter(fileResultName);
@@ -35,7 +27,7 @@ public class FileManagedment {
 					}
 				}
 			}
-			pw.write(contador);
+			pw.write(""+contador+"");
 			b = true;
 
 		} catch (IOException e) {
@@ -58,7 +50,6 @@ public class FileManagedment {
 	 * Llama al método counter
 	 */
 	public static void main(String[] args) {
-		System.out.println("segundo main");
 		char vowel = args[1].charAt(0);
 		char vowelCapital = args[1].toUpperCase().charAt(0);
 		if(counter(args[0], vowel, vowelCapital, args[2])) {
